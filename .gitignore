@@ -1,0 +1,8 @@
+/env
+/ffmpeg
+/notebooks
+*.h5
+*.keras
+*.mp4
+*.wav
+*.webm

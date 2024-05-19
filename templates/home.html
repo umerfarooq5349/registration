@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1d1b31;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+      }
+      .background {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .background .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        left: -80px;
+        top: -80px;
+      }
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        right: -30px;
+        bottom: -80px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.13);
+        padding: 10px 20px;
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border-radius: 5px;
+      }
+      .navbar-brand {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .navbar-nav .nav-link {
+        color: #ffffff;
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .navbar-toggler-icon {
+        color: #ffffff;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        padding: 20px;
+      }
+      .content h1 {
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      .content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        width: 80%;
+        max-width: 600px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+      .btn-custom {
+        border-radius: 5px;
+        font-weight: 600;
+        border: none;
+        background-color: #ffffff;
+        color: #1d1b31;
+        padding: 10px 20px;
+        margin: 10px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-custom:hover {
+        border: 2px solid #fff;
+        color: #fff !important;
+        background-color: #1d1b31;
+      }
+      .footer {
+        background-color: rgba(255, 255, 255, 0.13);
+        padding: 10px 0;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}"
+            >Personality Traits Assessment</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'testPersonality' %}"
+                  >Test your personality</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <h1>Welcome</h1>
+        <p>
+          A Web app which is developed for testing the traits of a candidate
+          named as "Personality Traits Assessment", by using Deep Learning
+          Models. Models are trained to predict Big Five traits from a video of
+          a candidate.
+        </p>
+        <div>
+          <a href="{% url 'testPersonality' %}" class="btn-custom"
+            >Test your personality</a
+          >
+          <a href="{% url 'about' %}" class="btn-custom">About</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2024 Personality Traits Assessment. All rights reserved.</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-OERcA2DztD1uWfIyDoJRaI9x0UJ1yBhtmJ2PQuEzF5RwPOW50Ieu7Mh04f75+IG9"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

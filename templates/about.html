@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #1d1b31;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+      }
+      .background {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .background .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        left: -80px;
+        top: -80px;
+      }
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        right: -30px;
+        bottom: -80px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.13);
+        padding: 10px 20px;
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .navbar-brand {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .navbar-nav .nav-link {
+        color: #ffffff;
+        font-size: 16px;
+        margin: 0 10px;
+      }
+      .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .navbar-toggler-icon {
+        color: #ffffff;
+      }
+      .content {
+        flex-grow: 1;
+        margin: 90px 0;
+        padding: 20px;
+      }
+      .content h1 {
+        font-size: 48px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      .content p {
+        font-size: 18px;
+        margin-bottom: 20px;
+
+        margin: auto;
+        text-align: justify;
+        line-height: 1.6;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      ul li {
+        font-size: 18px;
+        padding: 5px 0;
+      }
+      .team-table {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        border-collapse: collapse;
+      }
+      .team-table th,
+      .team-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ffffff;
+      }
+      .team-table tr:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .team-table img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .footer {
+        background-color: rgba(255, 255, 255, 0.13);
+        padding: 10px 0;
+        text-align: center;
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}"
+            >Personality Traits Assessment</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'testPersonality' %}"
+                  >Test your personality</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <h1>About Us</h1>
+        <p>
+          A Web app which is developed for testing the traits of a candidate
+          named as "Personality Traits Assessment", by using Deep Learning
+          Models. Models are trained to predict Big Five traits from a video of
+          a candidate. The Big Five traits include:
+        </p>
+        <ul style="text-align: left; margin: auto">
+          <li><b>Openness</b></li>
+          <li>Conscientiousness</li>
+          <li>Extraversion</li>
+          <li>Agreeableness</li>
+          <li>Neuroticism</li>
+        </ul>
+        <h2>Meet Our Team</h2>
+        <table class="team-table">
+          <tr>
+            <th>Photto</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Role</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://via.placeholder.com/80" alt="Team Member 1" />
+            </td>
+            <td>Summaira Nosheen</td>
+            <td>Senior Lecturer, Bahria University Lahore Campus</td>
+            <td>Supervisor</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="{% static 'static/umer.jpg' %}" alt="Team Member 2" />
+            </td>
+            <td>Muhammad Umer Farooq</td>
+            <td>Student, Bahria University</td>
+            <td>Team Lead</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="https://via.placeholder.com/80" alt="Team Member 3" />
+            </td>
+            <td>Amna Masroor</td>
+            <td>Student, Bahria University</td>
+            <td>Team Member</td>
+          </tr>
+        </table>
+      </div>
+      <div class="footer">
+        <p>&copy; 2024 Personality Traits Assessment. All rights reserved.</p>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

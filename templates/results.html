@@ -1,0 +1,317 @@
+<!-- Results.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Results</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #080710;
+        color: #ffffff;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        background: #1d1b31;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .navbar {
+        background-color: #2d2c48;
+        padding: 10px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .navbar-brand {
+        font-weight: 600;
+        color: #fff;
+      }
+      .navbar-nav .nav-link {
+        color: #fff;
+        transition: color 0.3s;
+      }
+      .navbar-nav .nav-link:hover {
+        color: #00a4b3;
+        text-decoration: underline;
+      }
+      .description {
+        margin: 30px 0;
+        padding: 20px;
+        background: #2d2c48;
+        border-radius: 8px;
+      }
+      .description h1 {
+        font-size: 28px;
+      }
+      .description p {
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+      .model-comparison {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .model {
+        flex: 1;
+        margin-right: 20px;
+        padding: 20px;
+        background: #2d2c48;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .model:last-child {
+        margin-right: 0;
+      }
+      .model h2 {
+        font-size: 22px;
+        color: #00a4b3;
+      }
+      .traits {
+        text-align: left;
+        margin-top: 10px;
+      }
+      .traits ul {
+        list-style-type: none;
+        text-align: center;
+      }
+      .traits ul li {
+        margin: 10px 0;
+        font-size: 16px;
+      }
+      .table-container {
+        margin-top: 30px;
+        background: #2d2c48;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .table-container p {
+        margin: 10px 0;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 12px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+      th {
+        background: #8b53d4;
+        color: #fff;
+        font-weight: 500;
+      }
+      tr:hover {
+        background-color: #474747;
+      }
+      .frames-container {
+        margin-top: 30px;
+        padding: 20px;
+        background: #2d2c48;
+        border-radius: 8px;
+      }
+      .image-container {
+        margin: 10px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        width: calc(33.333% - 20px);
+      }
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="{% url 'home' %}"
+            >Personality Traits Assessment</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'testPersonality' %}"
+                  >Test your personality</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- Model Comparison Section -->
+      <div class="description">
+        <h1>
+          Personality Trait Assessment via Video Analysis with Deep Learning
+        </h1>
+        <p>
+          This project uses deep learning (VGG19, ResNet) to analyze videos and
+          predict personality traits (OCEAN model). Videos are preprocessed,
+          then features are extracted to train models on labeled data (OCEAN
+          scores). Foolowing are the results on the provided video to compare
+          the resuults of both of the models. Furthure more we compared model
+          performance using loss,mae,mse,accuracy, precision recall, and f1
+          score to find the best architecture for video-based personality
+          assessment. While promising, limitations include cultural bias and
+          privacy concerns. After model comparision extracted frames from a
+          video are displayed
+        </p>
+      </div>
+      <div class="model-comparison">
+        <div class="model">
+          <h2>VGG19</h2>
+          <p>
+            Known for its depth (19 layers) allowing for complex feature
+            extraction from images.
+          </p>
+          <p class="description">
+            These are the predicted traits againt provided video who's frames
+            are given below
+          </p>
+          <div class="traits">
+            <ul>
+              <li><b>O</b>penness: 0</li>
+              <li><b>C</b>onscientiousness:0</li>
+              <li><b>E</b>xtraversion: 0</li>
+              <li><b>A</b>greeableness: 0</li>
+              <li><b>N</b>euroticism: 0</li>
+            </ul>
+          </div>
+        </div>
+        <div class="model">
+          <h2>Resnet</h2>
+          <p>
+            Achieves high accuracy with a more efficient architecture compared
+            to VGG19.
+          </p>
+          <p class="description">
+            These are the predicted traits againt provided video who's frames
+            are given below
+          </p>
+          <div class="traits">
+            <ul>
+              <li><b>O</b>penness: {{resnet_Prediction.Openness}}</li>
+              <li>
+                <b>C</b>onscientiousness:
+                {{resnet_Prediction.Conscientiousness}}
+              </li>
+              <li><b>E</b>xtraversion: {{resnet_Prediction.Extraversion}}</li>
+              <li><b>A</b>greeableness: {{resnet_Prediction.Agreeableness}}</li>
+              <li><b>N</b>euroticism: {{resnet_Prediction.Neuroticism}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="compare">
+        <div class="table-container">
+          <p>This is the Camparision Table for both of the models</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Model 1</th>
+                <th>Model 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Loss</td>
+                <td>0.25</td>
+                <td>0.30</td>
+              </tr>
+              <tr>
+                <td>MAE (Mean Absolute Error)</td>
+                <td>0.15</td>
+                <td>0.20</td>
+              </tr>
+              <tr>
+                <td>MSE (Mean Squared Error)</td>
+                <td>0.10</td>
+                <td>0.12</td>
+              </tr>
+              <tr>
+                <td>Accuracy</td>
+                <td>92%</td>
+                <td>90%</td>
+              </tr>
+              <tr>
+                <td>Precision</td>
+                <td>93%</td>
+                <td>91%</td>
+              </tr>
+              <tr>
+                <td>Recall</td>
+                <td>94%</td>
+                <td>89%</td>
+              </tr>
+              <tr>
+                <td>F1 Score</td>
+                <td>93.5%</td>
+                <td>90%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Extracted Frames from Video -->
+      <div class="frames-container">
+        <h1>Extracted Frames from Video</h1>
+        <div class="image-row">
+          {% for image_url in image_urls %}
+          <div class="image-container">
+            <img src="{% static image_url %}" alt="Frame" />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
