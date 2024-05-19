@@ -36,7 +36,7 @@ class FrameExtractionLayer(Layer):
 
 # Load model with custom objects
 model = tf.keras.models.load_model(
-    os.path.join(BASE_DIR, 'models/vgg_model_v1.5.keras'),
+    os.path.join(BASE_DIR, 'models/resnet_model_v1.5.keras'),
     custom_objects={'FrameExtractionLayer': FrameExtractionLayer}
 )
 
@@ -99,6 +99,7 @@ def image_urls():
         if file_name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
             url_path = os.path.join('/static/images', file_name)
             urls.append(url_path)
+    
     return urls
 
 def resize_image(image: np.ndarray, new_size: Tuple[int, int]) -> np.ndarray:
