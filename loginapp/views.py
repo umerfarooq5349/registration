@@ -54,10 +54,10 @@ def ResultsPage(request):
         video_path = request.POST.get('videoPath')
         if not video_path:
             video_path = './videos/testing 2.mp4'
-        resnet_Prediction = video_processing.prediction(video_path)
+        resnet_Prediction,vgg_prediction = video_processing.prediction(video_path)
         image_urls = video_processing.image_urls()
         print(image_urls)
-        return render(request, 'results.html', {'resnet_Prediction': resnet_Prediction, 'image_urls': image_urls})
+        return render(request, 'results.html', {'resnet_Prediction': resnet_Prediction, 'image_urls': image_urls,'vgg_prediction':vgg_prediction})
     else:
         return JsonResponse({'error': 'Invalid request method.'}, status=400)
     

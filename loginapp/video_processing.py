@@ -35,10 +35,15 @@ class FrameExtractionLayer(Layer):
         return config
 
 # Load model with custom objects
-model = tf.keras.models.load_model(
+resnet_model = tf.keras.models.load_model(
     os.path.join(BASE_DIR, 'models/resnet_model_v1.5.keras'),
     custom_objects={'FrameExtractionLayer': FrameExtractionLayer}
 )
+vgg_model = tf.keras.models.load_model(
+    os.path.join(BASE_DIR, 'models/vgg_model_v1.5.keras'),
+    custom_objects={'FrameExtractionLayer': FrameExtractionLayer}
+)
+
 
 def convert_webm_to_mp4(webm_path):
     mp4_path = webm_path.replace('.webm', '.mp4')
@@ -131,13 +136,17 @@ def prediction(path):
     resized_images = [resize_image(image=im, new_size=(128, 128)) for im in frames]
     cropped_images = [crop_image_window(image=resi, training=True) / 255.0 for resi in resized_images]
     preprocessed_video = np.stack(cropped_images)
-    predicted_personality_traits = model.predict([preprocessed_audio.reshape(1, 24, 1319, 1), preprocessed_video.reshape(1, 6, 128, 128, 3)])
+    resnet_predicted_personality_traits = resnet_model.predict([preprocessed_audio.reshape(1, 24, 1319, 1), preprocessed_video.reshape(1, 6, 128, 128, 3)])
     personalities = ['Neuroticism', 'Extraversion', 'Agreeableness', 'Conscientiousness', 'Openness']
-    for label, value in zip(personalities, predicted_personality_traits[0]):
+    for label, value in zip(personalities, resnet_predicted_personality_traits[0]):
         print(label + ': ' + str(value))
-    predicted_traits = {label: value for label, value in zip(personalities, predicted_personality_traits[0])}
-    
-    return predicted_traits
+    resnet_predicted_traits = {label: value for label, value in zip(personalities, resnet_predicted_personality_traits[0])}
+    vgg_predicted_personality_traits = vgg_model.predict([preprocessed_audio.reshape(1, 24, 1319, 1), preprocessed_video.reshape(1, 6, 128, 128, 3)])
+    personalities = ['Neuroticism', 'Extraversion', 'Agreeableness', 'Conscientiousness', 'Openness']
+    for label, value in zip(personalities, vgg_predicted_personality_traits[0]):
+        print(label + ': ' + str(value))
+    vgg_predicted_traits = {label: value for label, value in zip(personalities, vgg_predicted_personality_traits[0])}
+    return resnet_predicted_traits,vgg_predicted_traits
 
 # Example usage
 # prediction('videos/recorded_video_aSGTKdC.webm')
