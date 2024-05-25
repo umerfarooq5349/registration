@@ -128,6 +128,7 @@
       .team-table img {
         width: 80px;
         height: 80px;
+        object-fit: cover;
         border-radius: 50%;
       }
       .footer {
@@ -203,14 +204,17 @@
         <h2>Meet Our Team</h2>
         <table class="team-table">
           <tr>
-            <th>Photto</th>
+            <th>Photo</th>
             <th>Name</th>
             <th>Designation</th>
             <th>Role</th>
           </tr>
           <tr>
             <td>
-              <img src="https://via.placeholder.com/80" alt="Team Member 1" />
+              <img
+                src="{% static 'static/maam sumaira 1.jpeg' %}"
+                alt="Team Member 1"
+              />
             </td>
             <td>Summaira Nosheen</td>
             <td>Senior Lecturer, Bahria University Lahore Campus</td>
