@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-(ppx1e^^=bc)_e#wdu(0q8n56qb$5(ji6d(t=d4!*hxfz4#0-$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','*']
 
 
 # Application definition
@@ -38,7 +38,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'registration.urls'
+ROOT_URLCONF = 'personality_tarits_assesment.urls'
 
 TEMPLATES = [
     {
@@ -56,7 +56,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'registration.wsgi.application'
+WSGI_APPLICATION = 'personality_tarits_assesment.wsgi.application'
 
 
 # Database

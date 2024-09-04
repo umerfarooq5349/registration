@@ -1,166 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{% static 'static/icon.png' %}"
+      type="image/x-icon"
+    />
     <style>
-        *,
-        *:before,
-        *:after {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #080710;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Poppins', sans-serif;
-        }
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        .background .shape {
-            position: absolute;
-            border-radius: 50%;
-        }
-        .shape:first-child {
-            background: linear-gradient(#1845ad, #23a2f6);
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            left: -150px;
-        }
-        .shape:last-child {
-            background: linear-gradient(to right, #ff512f, #f09819);
-            width: 500px;
-            height: 500px;
-            bottom: -200px;
-            right: -200px;
-        }
-        form {
-            background-color: rgba(255, 255, 255, 0.13);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-            padding: 50px 35px;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        form h3 {
-            font-size: 32px;
-            font-weight: 500;
-            line-height: 42px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        label {
-            display: block;
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: 500;
-            color: #ffffff;
-        }
-        input {
-            display: block;
-            height: 50px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.07);
-            border-radius: 3px;
-            padding: 0 10px;
-            margin-top: 8px;
-            font-size: 14px;
-            font-weight: 300;
-            color: #e5e5e5;
-        }
-        ::placeholder {
-            color: #e5e5e5;
-        }
-        button {
-            margin-top: 30px;
-            width: 100%;
-            background-color: #ffffff;
-            color: #080710;
-            padding: 15px 0;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-link {
-            margin-top: 20px;
-            display: block;
-            color: #ffffff;
-            text-decoration: none;
-        }
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #080710;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+      }
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .background .shape {
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+      }
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        width: 500px;
+        height: 500px;
+        bottom: -200px;
+        right: -200px;
+      }
+      form {
+        background-color: rgba(255, 255, 255, 0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+      label {
+        display: block;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffff;
+      }
+      input {
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+        color: #e5e5e5;
+      }
+      ::placeholder {
+        color: #e5e5e5;
+      }
+      button {
+        margin-top: 30px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .login-link {
+        margin-top: 20px;
+        display: block;
+        color: #ffffff;
+        text-decoration: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
     <form method="post" onsubmit="return validateForm()">
-        <h3>Signup Here</h3>
-        {% csrf_token %}
-        <label for="username">Username</label>
-        <input type="text" placeholder="Enter Username" id="username" name="username">
-        <label for="email">Email</label>
-        <input type="email" placeholder="Enter Email" id="email" name="email">
-        <label for="password1">Password</label>
-        <input type="password" placeholder="Password" id="password1" name="password1">
-        <label for="password2">Confirm Password</label>
-        <input type="password" placeholder="Confirm Password" id="password2" name="password2">
-        <button type="submit">Sign UP</button>
+      <h3>Signup Here</h3>
+      {% csrf_token %}
+      <label for="username">Username</label>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        id="username"
+        name="username"
+      />
+      <label for="email">Email</label>
+      <input type="email" placeholder="Enter Email" id="email" name="email" />
+      <label for="password1">Password</label>
+      <input
+        type="password"
+        placeholder="Password"
+        id="password1"
+        name="password1"
+      />
+      <label for="password2">Confirm Password</label>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        id="password2"
+        name="password2"
+      />
+      <button type="submit">Sign UP</button>
 
-        <a href="{% url 'login' %}" class="login-link"><b>Already Have an account ?</b>Login</a>
+      <a href="{% url 'login' %}" class="login-link"
+        ><b>Already Have an account ?</b>Login</a
+      >
     </form>
     <script>
-      document.getElementById('signup-form').addEventListener('submit', function(event) {
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", function (event) {
           event.preventDefault();
-          const username = document.getElementById('username').value;
-          const email = document.getElementById('email').value;
-          const password1 = document.getElementById('password1').value;
-          const password2 = document.getElementById('password2').value;
-          const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+          const username = document.getElementById("username").value;
+          const email = document.getElementById("email").value;
+          const password1 = document.getElementById("password1").value;
+          const password2 = document.getElementById("password2").value;
+          const csrfToken = document.querySelector(
+            "[name=csrfmiddlewaretoken]"
+          ).value;
 
           if (password1 !== password2) {
-              alert('Passwords do not match.');
-              return;
+            alert("Passwords do not match.");
+            return;
           }
 
           const formData = new FormData();
-          formData.append('username', username);
-          formData.append('email', email);
-          formData.append('password1', password1);
-          formData.append('password2', password2);
-          formData.append('csrfmiddlewaretoken', csrfToken);
+          formData.append("username", username);
+          formData.append("email", email);
+          formData.append("password1", password1);
+          formData.append("password2", password2);
+          formData.append("csrfmiddlewaretoken", csrfToken);
 
           fetch('{% url "signup" %}', {
-              method: 'POST',
-              body: formData
+            method: "POST",
+            body: formData,
           })
-          .then(response => response.text())
-          .then(data => {
-              if (data.includes('Your password does not match')) {
-                  alert('Your password does not match');
+            .then((response) => response.text())
+            .then((data) => {
+              if (data.includes("Your password does not match")) {
+                alert("Your password does not match");
               } else {
-                  window.location.href = "{% url 'login' %}";
+                window.location.href = "{% url 'login' %}";
               }
-          })
-          .catch(error => console.error('Error:', error));
-      });
-  </script>
-</body>
+            })
+            .catch((error) => console.error("Error:", error));
+        });
+    </script>
+  </body>
 </html>
