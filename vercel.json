@@ -1,7 +1,7 @@
 {
     "builds": [
         {
-            "src": "djangoprojectname/wsgi.py",
+            "src": "personality_tarits_assesment/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -12,7 +12,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "djangoprojectname/wsgi.py"
+            "dest": "personality_tarits_assesment/wsgi.py"
         }
     ]
 }
