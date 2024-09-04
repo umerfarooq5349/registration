@@ -1,7 +1,7 @@
 /env
 /ffmpeg
 /notebooks
-/templates/static/images
+/templates/static/images/*
 *.h5
 *.keras
 *.mp4
