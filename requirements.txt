@@ -1,15 +1,8 @@
-
-annotated-types==0.6.0
 asgiref==3.8.1
-astunparse==1.6.3
-audioread==3.0.1
 certifi==2024.2.2
-cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
-contourpy==1.2.1
-cycler==0.12.1
 decorator==4.4.2
 Django==5.0.4
 dnspython==2.6.1
@@ -33,7 +26,6 @@ imageio==2.34.1
 imageio-ffmpeg==0.4.9
 Jinja2==3.1.4
 joblib==1.4.0
-keras==3.3.3
 kiwisolver==1.4.5
 lazy_loader==0.4
 libclang==18.1.1
@@ -52,7 +44,6 @@ numba==0.59.1
 numpy==1.26.4
 opencv-python==4.9.0.80
 opt-einsum==3.3.0
-optree==0.11.0
 orjson==3.10.3
 packaging==24.0
 pillow==10.3.0
@@ -83,9 +74,7 @@ soxr==0.3.7
 sqlparse==0.4.4
 starlette==0.37.2
 tensorboard==2.16.2
-tensorboard-data-server==0.7.2
 tensorflow==2.16.1
-tensorflow-intel==2.16.1
 termcolor==2.4.0
 threadpoolctl==3.4.0
 tqdm==4.66.4
