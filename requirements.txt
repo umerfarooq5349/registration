@@ -56,7 +56,6 @@ opt-einsum==3.3.0
 optree==0.11.0
 orjson==3.10.3
 packaging==24.0
-pickle4==0.0.1
 pillow==10.3.0
 platformdirs==4.2.0
 pooch==1.8.1
