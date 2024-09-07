@@ -1,6 +1,5 @@
 
 annotated-types==0.6.0
-python==3.12.3
 asgiref==3.8.1
 astunparse==1.6.3
 audioread==3.0.1
