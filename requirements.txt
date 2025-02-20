@@ -1,4 +1,4 @@
-python==3.12.3
+# python==3.12.3
 asgiref==3.8.1
 Django==5.0.4
 email_validator==2.1.1
