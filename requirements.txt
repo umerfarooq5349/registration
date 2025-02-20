@@ -1,28 +1,54 @@
 asgiref==3.8.1
+astunparse==1.6.3
+audioread==3.0.1
+certifi==2024.2.2
+cffi==1.16.0
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+contourpy==1.2.1
+cycler==0.12.1
+decorator==4.4.2
 Django==5.0.4
 email_validator==2.1.1
 Jinja2==3.1.4
+joblib==1.4.0
+keras==3.3.3
+kiwisolver==1.4.5
+lazy_loader==0.4
+libclang==18.1.1
+librosa==0.10.1
+llvmlite==0.42.0
+Markdown==3.6
+markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 numpy==1.26.4
-opencv-python==4.9.0.80  # For video processing & frame extraction
+opencv-python==4.9.0.80
+opt-einsum==3.3.0
+optree==0.11.0
+orjson==3.10.3
+packaging==24.0
 pillow==10.3.0
 python-dotenv==1.0.1
 requests==2.31.0
 scipy==1.13.0
 sqlparse==0.4.4
+starlette==0.37.2
+tensorboard==2.16.2
+tensorboard-data-server==0.7.2
 tensorflow==2.16.1
 tensorflow-intel==2.16.1
-uvicorn==0.29.0  # (If using FastAPI for deployment)
-
-# Video & Audio Processing
-moviepy==1.0.3  # For video editing & extraction
-ffmpeg-python==0.2.0  # Required for handling video
-imageio==2.34.1  # Reads video frames
-imageio-ffmpeg==0.4.9  # Faster video processing
-pydub==0.25.1  # For audio processing
-soundfile==0.12.1  # To read & write audio files
-librosa==0.10.1  # Advanced audio processing
-soxr==0.3.7  # High-quality audio resampling
-
-
-
+termcolor==2.4.0
+threadpoolctl==3.4.0
+tqdm==4.66.4
+typer==0.12.3
+typing_extensions==4.11.0
+tzdata==2024.1
+ujson==5.10.0
+urllib3==2.2.1
+uvicorn==0.29.0
+watchfiles==0.21.0
+websockets==12.0
+Werkzeug==3.0.2
+wheel==0.43.0
+wrapt==1.16.0
