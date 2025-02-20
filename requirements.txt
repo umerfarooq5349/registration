@@ -1,3 +1,4 @@
+Python==3.12.3
 asgiref==3.8.1
 Django==5.0.4
 email_validator==2.1.1
@@ -12,7 +13,7 @@ scipy==1.13.0
 sqlparse==0.4.4
 tensorflow==2.16.1
 tensorflow-intel==2.16.1
-uvicorn==0.29.0  # (If using FastAPI for deployment)
+
 
 # Video & Audio Processing
 moviepy==1.0.3  # For video editing & extraction
