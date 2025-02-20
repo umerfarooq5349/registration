@@ -1,29 +1,82 @@
-# python==3.12.3
+absl-py==2.1.0
 asgiref==3.8.1
+astunparse==1.6.3
+audioread==3.0.1
+certifi==2025.1.31
+cffi==1.17.1
+charset-normalizer==3.4.1
+click==8.1.8
+colorama==0.4.6
+decorator==4.4.2
+dj-database-url==2.3.0
 Django==5.0.4
+django-heroku==0.3.1
+dnspython==2.7.0
 email_validator==2.1.1
+ffmpeg-python==0.2.0
+flatbuffers==25.2.10
+future==1.0.0
+gast==0.6.0
+google-pasta==0.2.0
+grpcio==1.70.0
+gunicorn==23.0.0
+h11==0.14.0
+h5py==3.13.0
+idna==3.10
+imageio==2.34.1
+imageio-ffmpeg==0.4.9
 Jinja2==3.1.4
+joblib==1.4.2
+keras==3.8.0
+lazy_loader==0.4
+libclang==18.1.1
+librosa==0.10.1
+llvmlite==0.44.0
+Markdown==3.7
+markdown-it-py==3.0.0
 MarkupSafe==2.1.5
+mdurl==0.1.2
+ml-dtypes==0.3.2
+moviepy==1.0.3
+msgpack==1.1.0
+namex==0.0.8
+numba==0.61.0
 numpy==1.26.4
-opencv-python==4.9.0.80  # For video processing & frame extraction
+opencv-python==4.9.0.80
+opt_einsum==3.4.0
+optree==0.14.0
+packaging==24.2
 pillow==10.3.0
+platformdirs==4.3.6
+pooch==1.8.2
+proglog==0.1.10
+protobuf==4.25.6
+psycopg2==2.9.10
+pycparser==2.22
+pydub==0.25.1
+Pygments==2.19.1
 python-dotenv==1.0.1
 requests==2.31.0
+rich==13.9.4
+scikit-learn==1.4.2
 scipy==1.13.0
+setuptools==75.8.0
+six==1.17.0
+soundfile==0.12.1
+soxr==0.3.7
 sqlparse==0.4.4
+tensorboard==2.16.2
+tensorboard-data-server==0.7.2
 tensorflow==2.16.1
 tensorflow-intel==2.16.1
-
-
-# Video & Audio Processing
-moviepy==1.0.3  # For video editing & extraction
-ffmpeg-python==0.2.0  # Required for handling video
-imageio==2.34.1  # Reads video frames
-imageio-ffmpeg==0.4.9  # Faster video processing
-pydub==0.25.1  # For audio processing
-soundfile==0.12.1  # To read & write audio files
-librosa==0.10.1  # Advanced audio processing
-soxr==0.3.7  # High-quality audio resampling
-
-
-
+termcolor==2.5.0
+threadpoolctl==3.5.0
+tqdm==4.67.1
+typing_extensions==4.12.2
+tzdata==2025.1
+urllib3==2.3.0
+uvicorn==0.29.0
+Werkzeug==3.1.3
+wheel==0.45.1
+whitenoise==6.9.0
+wrapt==1.17.2
